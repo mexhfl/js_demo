@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件委托</title>
+	<script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+	<script>
+	var i=1;
+		function addLi(){
+			//alert(1);
+			var listr="<li>"+i+".asdasd</li>";
+			$("#list").append(listr);
+			i++;
+		}
+	$(function(){
+		$("#list").on("click","li",function(){
+			alert($(this).index());
+		});
+		setInterval(addLi,1000);
+	})
+	</script>
+</head>
+<body>
+	<ul id="list">
+		<li>zxcz</li>
+	</ul>
+</body>
+</html>
