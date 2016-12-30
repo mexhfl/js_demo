@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>iframe父子页面通信</title>
+	<meta charset="utf-8" />
+	<style>
+	iframe{
+		border:1px solid #f60;
+	}
+	</style>
+	<script>
+		window.onload=function(){
+			var osetBack=document.getElementById("setBack");
+			osetBack.onclick=function(){
+				myframe.window.document.body.style.backgroundColor="yellow";
+			}
+		}
+	</script>
+</head>
+<body>
+<!--
+方法调用
+父页面调用子页面方法：FrameName.window.childMethod();
+子页面调用父页面方法：parent.window.parentMethod();
+参考：http://www.cnblogs.com/sydeveloper/p/3712863.html
+-->
+    ParentPages<button id="setBack">设置子框架背景</button>
+    <iframe name="myframe" src="son1.html"></iframe>
+</body>
+</html>

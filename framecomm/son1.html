@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>sonpageTitle1</title>
+	<meta charset="utf-8" />
+    <script>
+        window.onload = function () {
+            var ochange = document.getElementById('change');
+            ochange.onclick = function () {
+                window.parent.document.getElementsByTagName('iframe')[0].src = 'son2.html';
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h3>Son Page 1</h3>
+    <button id="change">切换到第二个子页面</button>
+</body>
+</html>
