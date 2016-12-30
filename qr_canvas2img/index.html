@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>前端生成canvas二维码并转图片</title>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <meta charset="utf-8" />
+	<style>
+	#qrarea{
+		width:200px;
+		height:200px;
+		border:1px solid #f60;
+	}
+	#qrarea canvas{
+		width:100%;
+		height:100%;
+	}
+	</style>
+	<script>
+	$(function(){
+	
+		//生成canvas二维码
+		var str="http://www.wispx.net";
+		$('#qrarea').qrcode(str);
+		
+		//获取canvae节点
+		$oqrcan=document.getElementsByTagName('canvas')[0];
+		
+		//生成图片节点并指定图片url
+		var oimg=document.createElement('img');
+		oimg.src=$oqrcan.toDataURL("image/png");
+		document.body.appendChild(oimg);
+		
+
+	});
+
+	</script>
+</head>
+<body>
+		<div id="qrarea">
+		
+		</div>
+		
+</body>
+</html>
