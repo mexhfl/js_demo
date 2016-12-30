@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tree</title>
+	<script src="jquery.min.js"></script>
+	<link href="bootstrap.min.css" rel="stylesheet"/>
+	<link href="bootstrap-treeview.min.css" rel="stylesheet"/>
+	<script src="bootstrap.min.js"></script>
+	<script src="bootstrap-treeview.min.js"></script>
+	<script>
+		function getTree() {
+		    return data;
+		}
+
+		$(function() {
+
+			$.ajax({
+				url:"data.json",
+				type:"get",
+				cache:false,
+				success:function(data){
+					//console.log(data);
+					var tree=JSON.parse(data);
+					console.log(tree);
+					$('#tree').treeview({data: tree,levels: 1,});
+				},
+				error:function(){
+					console.log("error");
+				}
+			});
+
+			
+		})
+	</script>
+</head>
+<body>
+	<div id="tree"></div>
+</body>
+</html>
